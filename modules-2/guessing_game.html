@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guessing game</title>
+  <script>
+    var answer = parseInt(Math.random() * 100);
+    var userAnswer = +prompt("Угадайте число от 0 до 100");
+    var maxTryCount = 7;
+
+    for (tryCount = 1; tryCount < maxTryCount; tryCount++) {
+      if (userAnswer == answer) {
+        alert("Поздравляю, вы угадали!");
+        break;
+        // continue; - сразу переходим к следующей итерации
+      } else if (userAnswer > answer) {
+        alert("Вы ввели слишком большое число");
+      } else if (userAnswer < answer) {
+        alert("Вы ввели слишком маленькое число");
+      }
+
+      userAnswer = +prompt("Попробуйте еще раз. Введите число от 0 до 100\n У вас осталось " + (maxTryCount -
+        tryCount) + " попыток");
+    }
+
+    if (tryCount == maxTryCount) {
+      alert("Вы проиграли!");
+    }
+
+    alert("Правильный ответ " + answer);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
