@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank deposit</title>
+  <script>
+
+    var deposit = parseInt(prompt("Введите сумму депозита"));
+    var percent = parseInt(prompt("Введите желаемый ежегодный процент по вкладу"));
+
+    var yearsDeposit = 5;
+
+    for(i = 0; i < yearsDeposit; i++) {
+      deposit = deposit + ((deposit/100)*percent);
+      document.write("За " + (i+1) + " год депозит вырос до " + deposit + " <br>");
+    }
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
