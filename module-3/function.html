@@ -7,14 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Function</title>
   <script>
+    function recursiveFactorial(n) {
+      if(n == 0)
+        return 1;
+      
+
+      else
+        return recursiveFactorial(n-1) *n;
+    }
+
     function sayHello(name, surname) {
       document.write("Hello, "+ name +" " + surname + " <br>");
       document.write("Glad to see you <br>");
     }
 
+    function getRandomNumber(max) {
+      return math.round(Math.random() * max);
+    }
+
     sayHello("Mike", "Jordan");
 
     sayHello("Jhon", "Gray");
+
+    var rf = recursiveFactorial(4);
+    document.write(rf);
   </script>
 </head>
 
