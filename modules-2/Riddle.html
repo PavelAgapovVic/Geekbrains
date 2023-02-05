@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riddle</title>
+  <script>
+    var count = 0;
+
+    var userAnswer = prompt(
+      "Головастиком родился, В попрыгушку превратился. Я зеленая квакушка, Языком хватаю мушек. Кто я?");
+    var answer = "Лягушка";
+    if (userAnswer == answer || userAnswer == "лягушка" || userAnswer == "Жаба") {
+      alert("Все верно - " + answer)
+      count++;
+    } else {
+      alert("Не верно - " + answer)
+    }
+
+    var userAnswer = prompt(
+      "Кто с высоких тёмных сосен В ребятишек шишку бросил ? И в кусты через пенёк Промелькнул, как огонёк ? ");
+    var answer = "Белка";
+    if (userAnswer == answer || userAnswer == "белка" || userAnswer == "бельчонок") {
+      alert("Все верно - " + answer)
+      count++;
+    } else {
+      alert("Не верно - " + answer)
+    }
+
+    var userAnswer = prompt(
+      "Я прыгаю, когда иду, И сижу, когда стою. Кто я?");
+    var answer = "Кенгуру";
+    if (userAnswer == answer || userAnswer == "кенгуру" || userAnswer == "кенгуренок") {
+      alert("Все верно - " + answer)
+      count++;
+    } else {
+      alert("Не верно - " + answer)
+    }
+
+    var userAnswer = prompt(
+      "Я очень сильный и большой! Всех удивляет хобот мой. Кто я?");
+    var answer = "Слон";
+    if (userAnswer == answer || userAnswer == "слон" || userAnswer == "слоненок") {
+      alert("Все верно - " + answer)
+      count++;
+    } else {
+      alert("Не верно - " + answer)
+    }
+
+    alert("Количество отгаданных загадок - " + count)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
