@@ -7,47 +7,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riddle</title>
   <script>
+    function compareAnswer(userAnswer, answer) {
+      var solution__name = "";
+      var solution__status = false;
+      while (solution__status == false) {
+        for (i = 0; i < answer.length; i++) {
+          if (userAnswer == answer[i]) {
+            solution__name = answer[i];
+            solution__status = true;
+            break;
+          } else {
+            if (i == answer.length - 1) {
+              solution__status = false;
+              break;
+            }
+          }
+        }
+      }
+      var solution = [solution__status, solution__name];
+      return solution;
+    }
+
+    function checkRiddle(userAnswer, answer) {
+      var solution = compareAnswer(userAnswer, answer);
+      if (solution[0]) {
+        alert("Все верно - " + solution[1]);
+        count++;
+      } else {
+        alert("Не верно - " + answer[0]);
+      }
+    }
+
+    function askARiddle(riddles){
+      var answer = [];
+      for(i = 0; i < riddles.length; i++){
+        var userAnswer = prompt(riddles[i][0]);
+        answer = riddles[i][1];
+        checkRiddle(userAnswer, answer);
+      }
+      
+    }
     var count = 0;
-
-    var userAnswer = prompt(
-      "Головастиком родился, В попрыгушку превратился. Я зеленая квакушка, Языком хватаю мушек. Кто я?");
-    var answer = "Лягушка";
-    if (userAnswer == answer || userAnswer == "лягушка" || userAnswer == "Жаба") {
-      alert("Все верно - " + answer)
-      count++;
-    } else {
-      alert("Не верно - " + answer)
-    }
-
-    var userAnswer = prompt(
-      "Кто с высоких тёмных сосен В ребятишек шишку бросил ? И в кусты через пенёк Промелькнул, как огонёк ? ");
-    var answer = "Белка";
-    if (userAnswer == answer || userAnswer == "белка" || userAnswer == "бельчонок") {
-      alert("Все верно - " + answer)
-      count++;
-    } else {
-      alert("Не верно - " + answer)
-    }
-
-    var userAnswer = prompt(
-      "Я прыгаю, когда иду, И сижу, когда стою. Кто я?");
-    var answer = "Кенгуру";
-    if (userAnswer == answer || userAnswer == "кенгуру" || userAnswer == "кенгуренок") {
-      alert("Все верно - " + answer)
-      count++;
-    } else {
-      alert("Не верно - " + answer)
-    }
-
-    var userAnswer = prompt(
-      "Я очень сильный и большой! Всех удивляет хобот мой. Кто я?");
-    var answer = "Слон";
-    if (userAnswer == answer || userAnswer == "слон" || userAnswer == "слоненок") {
-      alert("Все верно - " + answer)
-      count++;
-    } else {
-      alert("Не верно - " + answer)
-    }
+    var riddles = [
+      ["Головастиком родился, В попрыгушку превратился. Я зеленая квакушка, Языком хватаю мушек. Кто я?", ["Лягушка", "лягушка", "Жаба", "жаба"]],
+      ["Кто с высоких тёмных сосен В ребятишек шишку бросил ? И в кусты через пенёк Промелькнул, как огонёк ? ", ["Белка", "белка", "бельчонок"]],
+      ["Я прыгаю, когда иду, И сижу, когда стою. Кто я?", ["Кенгуру", "кенгуру", "кенгуренок"]],
+      ["Я очень сильный и большой! Всех удивляет хобот мой. Кто я?", ["Слон", "слон", "слоненок"]]
+    ];
+    askARiddle(riddles);
 
     alert("Количество отгаданных загадок - " + count)
   </script>
